@@ -1,0 +1,768 @@
+@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@400;500&display=swap");
+
+.App {
+  background-color: rgb(221, 221, 220);
+  min-height: calc(100vh - 674px);
+  padding: 30px 0px 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+  line-height: 1;
+  -webkit-tap-highlight-color: transparent;
+  font-family: "Red Hat Display", sans-serif;
+}
+
+input,
+select,
+option,
+div {
+  border: 0px;
+}
+
+button {
+  background: none;
+  border: 0px;
+  cursor: pointer;
+  padding: 0px;
+  appearance: none;
+}
+
+.wrapper {
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex: 0 0 100%;
+  flex-direction: column;
+  max-width: 100%;
+}
+
+@media (min-width: 1140px) {
+  .wrapper {
+    display: flex;
+    flex: 0 0 83.3333%;
+    flex-direction: column;
+    max-width: 1140px;
+  }
+}
+
+@media (min-width: 960px) {
+  .wrapper {
+    display: flex;
+    flex: 0 0 75%;
+    flex-direction: column;
+    max-width: 75%;
+  }
+}
+
+.wrapper-options {
+  -webkit-box-align: center;
+  align-items: center;
+  background-color: rgb(255, 255, 255);
+  border-width: 1px 1px 0px;
+  border-top-style: solid;
+  border-right-style: solid;
+  border-left-style: solid;
+  border-top-color: rgb(209, 209, 207);
+  border-right-color: rgb(209, 209, 207);
+  border-left-color: rgb(209, 209, 207);
+  border-image: initial;
+  border-bottom-style: initial;
+  border-bottom-color: initial;
+  border-radius: 6px 6px 0px 0px;
+  display: flex;
+  padding: 12px;
+  position: sticky;
+  top: 0px;
+  z-index: 1000;
+  .search-filter {
+    background-color: rgb(255, 255, 255);
+    border: 2px solid rgb(221, 221, 220);
+    border-radius: 3px;
+    display: flex;
+    height: 32px;
+    -webkit-box-pack: start;
+    justify-content: flex-start;
+    padding: 7px 10px;
+    position: relative;
+    width: 188px;
+    input {
+      color: rgb(71, 76, 81);
+      font-size: 13px;
+      font-weight: 500;
+      width: 97%;
+    }
+    svg {
+      background-image: url(./assets/icons/search.svg);
+      background-repeat: no-repeat;
+      background-position: right;
+      background-size: contain;
+      width: 15px;
+    }
+  }
+}
+
+.filter-date {
+  -webkit-box-align: center;
+  align-items: center;
+  background-color: rgb(221, 221, 220);
+  border-radius: 3px;
+  color: rgb(33, 33, 33);
+  cursor: pointer;
+  display: inline-flex;
+  font-size: 13px;
+  font-weight: 500;
+  height: 32px;
+  -webkit-box-pack: end;
+  justify-content: flex-end;
+  margin-right: 10px;
+  padding: 0px 8px 0px 10px;
+  position: relative;
+  white-space: nowrap;
+  width: 84px;
+}
+
+.filter-dropdown {
+  background-color: rgb(255, 255, 255);
+  border-radius: 4px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  left: 0px;
+  padding: 30px 20px;
+  position: absolute;
+  top: 42px;
+  z-index: 100;
+}
+
+.filter-date option {
+  -webkit-box-align: center;
+  align-items: center;
+  display: flex;
+  font-size: 12px;
+  font-weight: 500;
+  margin-bottom: 16px;
+  white-space: nowrap;
+}
+
+.filter-game-type {
+  -webkit-box-align: center;
+  align-items: center;
+  background-color: rgb(221, 221, 220);
+  border-radius: 3px;
+  color: rgb(33, 33, 33);
+  cursor: pointer;
+  display: inline-flex;
+  font-size: 13px;
+  font-weight: 500;
+  height: 32px;
+  -webkit-box-pack: end;
+  justify-content: flex-end;
+  margin-right: 10px;
+  padding: 0px 8px 0px 10px;
+  position: relative;
+  white-space: nowrap;
+}
+
+.benefits {
+  width: 130px;
+}
+
+.deleteButton {
+  background-image: url(./assets/icons/trash.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: rgb(71, 76, 81);
+  margin-right: auto;
+  padding: 0px 10px;
+  -webkit-box-align: center;
+  align-items: center;
+  border-radius: 3px;
+  color: rgb(33, 33, 33);
+  cursor: pointer;
+  display: inline-flex;
+  font-size: 13px;
+  font-weight: 500;
+  height: 32px;
+  -webkit-box-pack: end;
+  justify-content: flex-end;
+  position: relative;
+  white-space: nowrap;
+  width: 36px;
+}
+
+.top-header {
+  background-color: rgb(52, 55, 59);
+  border-left: 1px solid rgb(209, 209, 207);
+  border-right: 1px solid rgb(209, 209, 207);
+  color: rgb(255, 255, 255);
+  min-height: 44px;
+  padding: 5px 0px 5px 11px;
+  position: sticky;
+  top: 57px;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  .filters {
+    -webkit-box-align: center;
+    align-items: center;
+    display: flex;
+    flex: 1 1 0%;
+    max-width: 510px;
+    width: 100%;
+  }
+  .odd-names {
+    display: flex;
+    margin-right: 23px;
+    border-right: 1px solid rgb(37, 39, 42);
+    .header-item {
+      -webkit-box-align: center;
+      align-items: center;
+      border-left: 1px solid rgb(37, 39, 42);
+      display: flex;
+      font-size: 11px;
+      font-weight: 500;
+      -webkit-box-pack: center;
+      justify-content: center;
+      line-height: 16px;
+      padding: 0px 10px;
+      text-align: center;
+      width: 93px;
+    }
+    .header-item.small {
+      width: 62px;
+    }
+    .header-item.large {
+      width: 124px;
+    }
+  }
+}
+
+.oddHeader {
+  background-color: rgb(71, 76, 81);
+  border-left: 1px solid rgb(209, 209, 207);
+  border-right: 1px solid rgb(209, 209, 207);
+  color: rgb(255, 255, 255);
+  display: flex;
+  height: 30px;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  position: sticky;
+  top: 101px;
+  z-index: 50;
+}
+
+.oddHeader > .date {
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 30px;
+  padding-left: 10px;
+}
+
+.oddHeader > .odd-numbers {
+  border-left: 1px solid rgb(52, 55, 59);
+  display: flex;
+  margin-left: auto;
+  max-width: 459px;
+  min-width: 397px;
+}
+
+.oddHeader > .odd-numbers > .odd-numbers-item {
+  -webkit-box-align: center;
+  align-items: center;
+  border-right: 1px solid rgb(52, 55, 59);
+  display: flex;
+  font-size: 11px;
+  font-weight: 700;
+  -webkit-box-pack: center;
+  justify-content: center;
+  text-align: center;
+  width: 31px;
+}
+
+.oddHeader > .odd-numbers > .odd-numbers-item.thin {
+  border-right: 0px;
+  margin-left: auto;
+  position: relative;
+  width: 24px;
+}
+
+.game-grid {
+  background-color: rgb(255, 255, 255);
+  border-right: 1px solid rgb(209, 209, 207);
+  display: flex;
+  padding-right: 24px;
+  position: relative;
+  .favorite {
+    -webkit-box-align: center;
+    align-items: center;
+    border-right: 1px solid rgb(209, 209, 207);
+    display: flex;
+    font-size: 11px;
+    font-weight: 700;
+    height: 40px;
+    -webkit-box-pack: center;
+    justify-content: center;
+    padding: 0px 2px;
+    position: relative;
+    border-left: 1px solid rgb(209, 209, 207);
+    width: 38px;
+    button {
+      background-image: url(./assets/icons/favorite.svg);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 19px 19px;
+      height: 100%;
+      width: 100%;
+    }
+  }
+  .betMandatory {
+    -webkit-box-align: center;
+    align-items: center;
+    border-right: 1px solid rgb(209, 209, 207);
+    display: flex;
+    font-size: 11px;
+    font-weight: 700;
+    height: 40px;
+    -webkit-box-pack: center;
+    justify-content: center;
+    padding: 0px 2px;
+    position: relative;
+    width: 34px;
+    div {
+      border-radius: 3px;
+      flex: 0 0 16px;
+      font-size: 11px;
+      font-weight: 700;
+      height: 16px;
+      line-height: 16px;
+      text-align: center;
+      width: 16px;
+      background-color: rgb(74, 144, 226);
+      color: white;
+    }
+  }
+  .game-time {
+    -webkit-box-align: center;
+    align-items: center;
+    border-right: 1px solid rgb(209, 209, 207);
+    display: flex;
+    font-size: 11px;
+    font-weight: 700;
+    height: 40px;
+    -webkit-box-pack: center;
+    justify-content: center;
+    padding: 0px 2px;
+    position: relative;
+    width: 34px;
+  }
+  .game-league {
+    -webkit-box-align: center;
+    align-items: center;
+    border-right: 1px solid rgb(209, 209, 207);
+    font-size: 11px;
+    font-weight: 700;
+    height: 40px;
+    -webkit-box-pack: center;
+    justify-content: center;
+    padding: 0px 2px;
+    position: relative;
+    width: 34px;
+    display: block;
+    line-height: 40px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .game-teams {
+    -webkit-box-align: center;
+    align-items: center;
+    border-right: 1px solid rgb(209, 209, 207);
+    display: flex;
+    font-size: 11px;
+    font-weight: 700;
+    height: 40px;
+    position: relative;
+    width: 34px;
+    -webkit-box-flex: 1;
+    flex-grow: 1;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    // max-width: 477px;
+    padding: 0px 10px 0px 12px;
+    cursor: pointer;
+  }
+  .odds {
+    -webkit-box-align: center;
+    align-items: center;
+    border-right: 1px solid rgb(209, 209, 207);
+    display: flex;
+    font-size: 11px;
+    font-weight: 700;
+    height: 40px;
+    -webkit-box-pack: center;
+    justify-content: center;
+    padding: 0px 2px;
+    position: relative;
+    cursor: pointer;
+    width: 31px;
+  }
+  .odds.odd-active {
+    background-color: orange;
+  }
+  .load-more {
+    -webkit-box-align: center;
+    align-items: center;
+    cursor: pointer;
+    display: flex;
+    font-weight: 700;
+    -webkit-box-pack: center;
+    justify-content: center;
+    background-color: rgb(153, 153, 153);
+    color: rgb(255, 255, 255);
+    font-size: 10px;
+    height: 40px;
+    letter-spacing: -0.2px;
+    line-height: 10px;
+    margin-left: auto;
+    position: absolute;
+    right: 0px;
+    width: 24px;
+    border-radius: 0px !important;
+  }
+  .load-more::before {
+    border-left: 1px solid rgb(209, 209, 207);
+    bottom: 0px;
+    content: "";
+    display: block;
+    left: -1px;
+    position: absolute;
+    top: 0px;
+    width: 1px;
+  }
+}
+
+.game-bets > div:nth-child(even) {
+  background: rgba(255, 255, 255, 0.63);
+}
+
+.coupons-wrapper {
+  bottom: 0px;
+  height: 55px;
+  position: fixed;
+  right: 60px;
+  width: 275px;
+  z-index: 100000;
+  .coupon-menu-header {
+    align-items: flex-start;
+    background-color: rgb(243, 227, 0);
+    border-radius: 6px 6px 0px 0px;
+    cursor: pointer;
+    display: flex;
+    height: 55px;
+    padding: 11px 32px 8px 13px;
+    position: relative;
+    .match-count {
+      background-color: rgb(71, 76, 81);
+      border-radius: 15px;
+      color: rgb(255, 255, 255);
+      font-size: 12px;
+      font-weight: 700;
+      line-height: 28px;
+      margin-left: auto;
+      margin-top: 2px;
+      padding: 0px 12px;
+    }
+    button {
+      height: 32px;
+      width: 36px;
+      position: absolute;
+      right: 0;
+      background-image: url(./assets/icons/menu-arrow.svg);
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+  }
+  .mini-details {
+    display: flex;
+    flex-direction: column;
+    h6 {
+      color: rgb(33, 33, 33);
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 19px;
+      margin-bottom: 1px;
+    }
+    p {
+      color: rgb(33, 33, 33);
+      font-size: 12px;
+      font-weight: 500;
+      line-height: 16px;
+    }
+  }
+  .footer {
+    background-color: rgb(37, 39, 42);
+    padding: 12px 10px;
+    .tools {
+      -webkit-box-align: center;
+      align-items: center;
+      display: flex;
+      -webkit-box-pack: justify;
+      justify-content: space-between;
+      .save-coupon {
+        display: flex;
+        input {
+          background-color: rgb(52, 55, 59);
+          border-radius: 3px;
+          color: rgb(153, 153, 153);
+          font-size: 12px;
+          font-weight: 500;
+          height: 36px;
+          margin-right: 12px;
+          padding: 0px 9px;
+          width: 95px;
+        }
+        button {
+          color: rgb(52, 55, 59);
+          display: inline-flex;
+          -webkit-box-align: center;
+          align-items: center;
+          font-weight: 700;
+          -webkit-box-pack: center;
+          justify-content: center;
+          border-radius: 4px;
+          font-size: 11px;
+          height: 36px;
+          margin-bottom: 0px;
+          margin-top: 0px;
+          width: 52px;
+          background-color: rgb(153, 153, 153);
+        }
+      }
+      .icons {
+        -webkit-box-align: center;
+        align-items: center;
+        display: flex;
+        -webkit-box-pack: end;
+        justify-content: flex-end;
+        svg {
+          background-repeat: no-repeat;
+          background-position: right;
+          background-size: contain;
+          height: 16px;
+          width: 16px;
+          margin-left: 6px;
+        }
+        .settings {
+          background-image: url(./assets/icons/settings.svg);
+        }
+        .trash {
+          background-image: url(./assets/icons/trash.svg);
+        }
+      }
+    }
+  }
+}
+.coupons-wrapper.active {
+  height: auto;
+  box-shadow: -42px 30px 44px rgba(0, 0, 0, 0.25);
+  .match-list {
+    background-color: rgb(255, 255, 255);
+    max-height: 250px;
+    overflow-y: auto;
+    .match-grid {
+      border-bottom: 1px solid rgb(209, 209, 207);
+      padding: 9px 12px;
+      .match-row {
+        align-items: center;
+        display: flex;
+        .slip {
+          -webkit-box-align: center;
+          align-items: center;
+          border: 1px solid rgb(153, 153, 153);
+          border-radius: 3px;
+          color: rgb(153, 153, 153);
+          cursor: pointer;
+          display: flex;
+          flex: 0 0 16px;
+          font-size: 11px;
+          font-weight: 700;
+          height: 16px;
+          -webkit-box-pack: center;
+          justify-content: center;
+          margin-right: 11px;
+          width: 16px;
+        }
+        > p {
+          color: rgb(33, 33, 33);
+          flex: 0 0 165px;
+          font-size: 12px;
+          font-weight: 700;
+          line-height: 14px;
+          time {
+            color: rgb(33, 33, 33);
+            display: block;
+            font-size: 10px;
+            font-weight: 400;
+            height: 13px;
+            margin-top: 2px;
+          }
+        }
+        .remove-game {
+          display: flex;
+          margin-left: auto;
+          background-image: url(./assets/icons/trash-coupon.svg);
+          background-repeat: no-repeat;
+          background-position: right;
+          background-size: contain;
+          width: 15px;
+          height: 15px;
+        }
+        .match-mbs {
+          border-radius: 3px;
+          flex: 0 0 16px;
+          font-size: 11px;
+          font-weight: 700;
+          height: 16px;
+          line-height: 16px;
+          text-align: center;
+          width: 16px;
+          background-color: rgb(74, 144, 226);
+          span {
+            color: rgb(255, 255, 255);
+            opacity: 0.9;
+          }
+        }
+        .odd-name {
+          color: rgb(52, 55, 59);
+          flex: 0 0 120px;
+          font-size: 11px;
+          font-weight: 400;
+          line-height: 14px;
+          margin-left: 11px;
+        }
+        .odd-value {
+          display: flex;
+          flex-direction: column;
+          margin-left: auto;
+          margin-right: 11px;
+          position: relative;
+          text-align: center;
+          p {
+            border-radius: 1px;
+            color: rgb(33, 33, 33);
+            font-size: 14px;
+            font-weight: 700;
+            line-height: 15px;
+          }
+        }
+        svg {
+          background-image: url(./assets/icons/ball.svg);
+          background-repeat: no-repeat;
+          background-position: right;
+          background-size: contain;
+          width: 15px;
+          height: 15px;
+        }
+      }
+    }
+  }
+  .coupon-rates {
+    background-color: rgb(52, 55, 59);
+    color: rgb(255, 255, 255);
+    font-size: 12px;
+    padding: 10px;
+    .option-line {
+      -webkit-box-align: center;
+      align-items: center;
+      display: flex;
+      -webkit-box-pack: justify;
+      justify-content: space-between;
+      margin-bottom: 11px;
+      div {
+        width: 75px;
+        label {
+          font-size: 11px;
+          font-weight: 500;
+          line-height: 14px;
+          margin-bottom: 3px;
+          position: relative;
+          color: #fff;
+        }
+        .system {
+          -moz-appearance:none;
+          -webkit-appearance:none;
+          appearance:none;
+          background-color: rgb(255, 255, 255);
+          border-radius: 3px;
+          cursor: pointer;
+          font-size: 11px;
+          height: 36px;
+          line-height: 16px;
+          overflow: hidden;
+          padding: 0px 22px 0px 10px;
+          text-align: left;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          width: 100%;
+          color: rgb(33, 33, 33);
+          font-weight: 700;
+          background-image: url(./assets/icons/arrow.svg);
+          background-repeat: no-repeat;
+          background-position: 90%;
+        }
+      }
+      }
+      .odd-line {
+        -webkit-box-align: center;
+        align-items: center;
+        display: flex;
+        -webkit-box-pack: justify;
+        justify-content: space-between;
+        margin-bottom: 9px;
+        .amount {
+          font-weight: 700;
+          color: rgb(106, 194, 74);
+          font-size: 14px;
+        }
+        .play {
+          background-color: rgb(0, 134, 65);
+          color: rgb(255, 255, 255);
+          font-size: 15px;
+          height: 42px;
+          margin-bottom: 0px;
+          margin-top: 0px;
+          width: 100%;
+          font-weight: 700;
+          border-radius: 4px;
+        }
+        .short-code {
+          font-size: 12px;
+          height: 38px;
+          margin-bottom: 0px;
+          margin-top: 0px;
+          width: 100%;
+          background-color: rgb(224, 228, 178);
+          color: rgb(33, 33, 33);
+          font-weight: 700;
+          border-radius: 4px;
+        }
+      }
+    }
+    .coupon-menu-header.active {
+      background-color: rgb(37, 39, 42);
+      .mini-details > h6 {
+        color: #f3e300;
+      }
+      .mini-details > p {
+        color: #fff;
+      }
+    }
+}
