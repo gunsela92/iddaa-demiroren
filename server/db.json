@@ -349,30 +349,5 @@
       }
     }
   ],
-  "userCoupon": [
-    {
-      "gameId": 7,
-      "game": "Cambridge - Oxford",
-      "betValue": 2.55,
-      "betName": "MS1",
-      "date": "07.08.2021 17:00",
-      "id": "1ab5d5d-607-3a12-fbaa-144867e35c6b"
-    },
-    {
-      "gameId": 6,
-      "game": "Crewe - Cheltenham",
-      "betValue": 2.8,
-      "betName": "MS0",
-      "date": "07.08.2021 17:00",
-      "id": "a1f374-cca3-c148-bf5a-08d67b8ab78c"
-    },
-    {
-      "gameId": 3,
-      "game": "Shrewsbury - Burton Albion",
-      "betValue": 2.8,
-      "betName": "MS0",
-      "date": "07.08.2021 17:00",
-      "id": "23e5be3-314-8200-a8d4-1c53443ba0db"
-    }
-  ]
+  "userCoupon": []
 }
