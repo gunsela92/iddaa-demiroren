@@ -20,9 +20,11 @@ const DELETE_COUPON = (data) => {
   return axios.delete(API_URL + "/userCoupon/" + data)
 }
 
-export default {
-  LOAD_GAMES,
-  BET_GAME,
-  GET_COUPON,
-  DELETE_COUPON
-};
+const actions = {
+    LOAD_GAMES,
+    BET_GAME,
+    GET_COUPON,
+    DELETE_COUPON
+}
+
+export default actions;

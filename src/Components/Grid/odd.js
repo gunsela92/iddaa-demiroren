@@ -1,7 +1,10 @@
 import React, { useMemo, useCallback } from "react";
-import GameService from "../Services/game-services";
+import GameService from "../../Services/game-services";
 import { useDispatch } from "react-redux";
-import { addGameToCoupon, removeGameFromCoupon } from "../redux/couponActions";
+import {
+  addGameToCoupon,
+  removeGameFromCoupon,
+} from "../../redux/couponActions";
 import uuid from "react-uuid";
 
 const Odds = React.memo((props) => {

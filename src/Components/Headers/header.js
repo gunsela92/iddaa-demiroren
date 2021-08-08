@@ -5,7 +5,18 @@ const Header = () => {
   return (
     <React.Fragment>
     <div className="top-header">
-      <div className="filters"/>
+      <div className="filters">
+        <button className="filter-btn"></button>
+        <div className="switch">
+          <button className="switch-button-left"><span>Tarihe Göre</span></button>
+          <button className="switch-button-right"><span>Lige Göre</span></button>
+        </div>
+
+        <button className="one-match-svg"></button>
+        <button className="live-svg"></button>
+        <button className="king-svg"></button>
+      </div>
+
       <div className="odd-names">
         <div className="header-item">
           Maç Sonucu

@@ -53,7 +53,7 @@ const CouponMenu = (props) => {
       </header>
       <section className="match-list">
         {userCoupons.map((e) => (
-          <div className="match-grid">
+          <div key={e.id} className="match-grid">
             <div className="match-row">
               <div className="slip">B</div>
               <p>
@@ -95,7 +95,7 @@ const CouponMenu = (props) => {
             <label>Misli</label>
             <select className="system" onChange={event => handlePrice(event)}>
               {getOptions().map(o => (
-                <option value={o}>{o}</option>
+                <option key={o} value={o}>{o}</option>
               ))}
             </select>
           </div>
